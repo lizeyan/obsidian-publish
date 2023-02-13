@@ -11,7 +11,7 @@ tags:
 
 这篇文章将聚类问题看成binary classification, 即每一对样本是否属于同一个类别(1或0). 由于实际上聚类是无监督的, 我们没有ground truth, 所以这篇文章提出了一个adaptive clustering算法.
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Deep Adaptive Image Clustering_image_1.png)
 
 DAC对问题的建模如下式
 
@@ -47,7 +47,7 @@ $$
 
 最终DAC的模型可以被写成下图的形式
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/Deep Adaptive Image Clustering_image_2.png)
 
 DAC在优化时对$\mathbf{w}$和$\lambda$是分别优化的.
 
