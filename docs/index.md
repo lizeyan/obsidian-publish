@@ -1,6 +1,5 @@
 ---
 share: true
-banner: attachments/Zeyan_Li.pdf,attachments/李则言.pdf
 ---
 # Zeyan Li 李则言
 
