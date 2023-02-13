@@ -19,7 +19,7 @@ GAD包含两类异常, locally-anomalous graph指的是图上的个别节点及�
 
 这篇文章提出了一个基于random knowledge distillation的GAD方法, GLocalKD. 它可以同时检测local和global anomalous graph.
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Deep Graph-level Anomaly Detection by Glocal Knowledge Distillation_image_1.png)
 
 GLocalKD首先准备两个GNN网络. 其中Random Target Network的权重固定在随机初始化的状态. 另一个网络是可训练的. 然后训练目标是分别比较两个网络的node representation和graph representation, 并把local和global的loss相加. 最终目标是让predictor network学习到random target network的输出. 最后的异常检测指标是predictor network和random target network输出的node和graph repsentation的距离.
 
