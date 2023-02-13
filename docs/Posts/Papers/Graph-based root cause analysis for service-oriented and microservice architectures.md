@@ -3,7 +3,7 @@ share: true
 tags:
   - Paper Notes
   - JSS
-  - 2020
+  - "2020"
 ---
 
 
