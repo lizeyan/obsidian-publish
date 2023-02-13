@@ -4,8 +4,8 @@ site_url: https://www.lizeyan.me # Change this to your site URL
 
 theme:
     name: 'material'
-    logo: attachments/favicons.jpg
-    favicon: attachments/favicons.jpg
+    logo: assets/logo/favicons.jpg
+    favicon: assets/logo/favicons.jpg
     custom_dir: overrides
     font:
         text: Ubuntu
@@ -131,7 +131,7 @@ extra_css:
     - assets/css/custom_attributes.css
     - assets/css/customization.css
 extra:
-  SEO: attachments/favicons.png
+  SEO: assets/logo/favicons.png
   comments: true #disable comments globally
   generate_graph: true #generate the graph of the site
   attachments: 'attachments' #path to the folder where the attachments are stored

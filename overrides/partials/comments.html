@@ -4,8 +4,6 @@
 {% set config_comments = False if config_comments is none else config.extra["comments"] %}
 {% set comments = config_comments if local_comments is none else page.meta['comments'] %}
 {% if comments %}
-    <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
-
     <script src="https://giscus.app/client.js"
         data-repo="lizeyan/obsidian-publish"
         data-repo-id="R_kgDOI9JEpg"
