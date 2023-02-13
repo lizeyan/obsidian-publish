@@ -11,7 +11,7 @@ tags:
 
 This paper focuses on generating debug queries for developer in debugging process.
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_1.png)
 
 The motivation is that manual debugging is very time-consuming. Though there are a lot of specialized debugging tools for different subsystems or types of faults (cAdvisor, Marple, Jaeger), it is difficult to decide which subsystem to query and how to set query parameters.
 
@@ -25,7 +25,7 @@ This paper set up three testbed systems, injected faults in them, and collected 
 
 ## Methodology
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_2.png)
 
 #### Input Data
 
@@ -35,15 +35,15 @@ A user report is an arbitrary text.
 
 A system log is condensed and featured (e.g., min, max, average, median) time-series data from metric collectors (e.g., packet count, queue depth, execution latency, CPU utilization, memory utilization, disk throughput).
 
-![Untitled](../../attachments/Untitled 2.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_3.png)
 
 A query is a structured text, which can be represented by an AST (abstract syntax tree).
 
-![Untitled](../../attachments/Untitled 3.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_4.png)
 
 #### Model Factorizing
 
-![Untitled](../../attachments/Untitled 4.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_5.png)
 
 The target distribution
 
@@ -75,10 +75,10 @@ $$
 
 #### Predicting Query Templates
 
-![Untitled](../../attachments/Untitled 5.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_6.png)
 
 #### Predicting Values to Fill
-![Untitled](../../attachments/Untitled 6.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_7.png)
 
 ## Evaluation
 
@@ -96,15 +96,15 @@ Monitoring: cAdvisor, Jaeger, Marple, tcpdump (for query only, no system logs)
 
 Fault injection:
 
-![Untitled](../../attachments/Untitled 7.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_8.png)
 
 User reports: Amazon Mechanical Turk (a crowdsourcing platform)
 
 #### Overall Performance
 
-![Untitled](../../attachments/Untitled 8.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_9.png)
 
-![Untitled](../../attachments/Untitled 9.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_10.png)
 
 The top-r recall is high in both recurring and unseen (recurring categories with new locations) faults.
 
@@ -112,17 +112,17 @@ The top-r recall is high in both recurring and unseen (recurring categories with
 
 ###### User Report
 
-![Untitled](../../attachments/Untitled 10.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_11.png)
 
 ###### Multiple Tool vs Single Tool
 
-![Untitled](../../attachments/Untitled 11.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_12.png)
 
 The performance combining multiple debug tools is worse than single tools since the latter has narrower search space for query templates.
 
 ###### Model Structure
 
-![Untitled](../../attachments/Untitled 12.png)
+![Untitled](../../attachments/Revelio ML-Generated Debugging Queries for Distrib_image_13.png)
 
 ## Thinking and Conclusion
 
