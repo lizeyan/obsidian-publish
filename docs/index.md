@@ -1,5 +1,6 @@
 ---
 share: true
+banner: attachments/favicons.jpg
 ---
 # Zeyan Li 李则言
 
