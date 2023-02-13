@@ -15,15 +15,15 @@ tags:
 
 首先，我们可以对一个trace的latency分解为如下的树结构
 
-![Untitled.png](attachments/Sage%20/Untitled.png)
+![Sage Leveraging ML To Diagnose Unpredictable Perfo_image_1](../../attachments/Sage%20Leveraging%20ML%20To%20Diagnose%20Unpredictable%20Perfo_image_1.png)
 
 （这个模型jaeger就可以做到，但是银行客户那边没见过这么详细的数据）
 
 然后，我们基于这个模型，可以构造这么一个贝叶斯模型
 
-![Untitled 1.png](/Untitled%201.png)
+![Sage Leveraging ML To Diagnose Unpredictable Perfo_image_2](../../attachments/Sage%20Leveraging%20ML%20To%20Diagnose%20Unpredictable%20Perfo_image_2.png)
 
-![Untitled 2.png](/Untitled%202.png)
+![Sage Leveraging ML To Diagnose Unpredictable Perfo_image_3](../../attachments/Sage%20Leveraging%20ML%20To%20Diagnose%20Unpredictable%20Perfo_image_3.png)
 
 每个RPC的latency分解为service side， client side， request/response network delay。
 
@@ -37,7 +37,7 @@ client side latency由来回的网络延迟和service side latency决定，而�
 
 ## Evaluation
 
-![Untitled 3.png](/Untitled%203.png)
+![Sage Leveraging ML To Diagnose Unpredictable Perfo_image_4](../../attachments/Sage%20Leveraging%20ML%20To%20Diagnose%20Unpredictable%20Perfo_image_4.png)
 
 通过stress的方式注入异常，Sage能更快使系统恢复
 
