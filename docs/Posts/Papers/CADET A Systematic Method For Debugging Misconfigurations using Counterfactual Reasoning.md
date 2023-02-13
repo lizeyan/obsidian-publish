@@ -15,9 +15,9 @@ misconfiguration可能会导致non-functional faults (比如latency下降)。由
 
 例如，从下图（a）来看，GPU growth（*不太懂但是好像是显存的某种限制*）增长会导致latency增加，但是这个结论是反直觉的。如果我们引入别的因素，swap memory来看，就会发现gpu growth增加和swap memory的增加是正相关的，而swap memory增加和latency增加是正相关的。但是如果限制swap memory不变，gpu growth增加，那么gpu growth和latency是负相关的。
 
-![Untitled](../../attachments/Untitled.png)
+![CADET A Systematic Method For Debugging Misconfigurations using Counterfactual Reasoning_image_1](../../attachments/CADET%20A%20Systematic%20Method%20For%20Debugging%20Misconfigurations%20using%20Counterfactual%20Reasoning_image_1.png)
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![CADET A Systematic Method For Debugging Misconfigurations using Counterfactual Reasoning_image_2](../../attachments/CADET%20A%20Systematic%20Method%20For%20Debugging%20Misconfigurations%20using%20Counterfactual%20Reasoning_image_2.png)
 
 因此这篇文章（CADET）采用了causality mining的方法。首先挖掘一个causality graph，然后对其上的causal path进行排序，找到对non-functional property （例如latency）影响最大的路径，从而指导configuration优化。
 
@@ -58,7 +58,7 @@ ACE最大的X就是优化Z最优先需要考虑的项
 
 记一个优化操作是$r$，那么这个操作的有效性就是ITE （individual treatment effect）
 
-![Untitled 2](../../attachments/Untitled%202.png)
+![CADET A Systematic Method For Debugging Misconfigurations using Counterfactual Reasoning_image_3](../../attachments/CADET%20A%20Systematic%20Method%20For%20Debugging%20Misconfigurations%20using%20Counterfactual%20Reasoning_image_3.png)
 
 CADET会枚举所有的$r$，然后计算使得ITE最大的$r$。
 
@@ -68,7 +68,7 @@ CADET会枚举所有的$r$，然后计算使得ITE最大的$r$。
 
 数据集中包含5个软件系统，运行在3中硬件平台上（15种组合）。配置项有28项，10项软件的，8项操作系统的，10项硬件的（*都不是很多*）。
 
-![Untitled 3](../../attachments/Untitled%203.png)
+![CADET A Systematic Method For Debugging Misconfigurations using Counterfactual Reasoning_image_4](../../attachments/CADET%20A%20Systematic%20Method%20For%20Debugging%20Misconfigurations%20using%20Counterfactual%20Reasoning_image_4.png)
 
 ## Thinking and Conclusion
 
