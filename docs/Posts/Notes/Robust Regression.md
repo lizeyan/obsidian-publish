@@ -1,6 +1,5 @@
 ---
 share: true
-tags:
 ---
 
 
