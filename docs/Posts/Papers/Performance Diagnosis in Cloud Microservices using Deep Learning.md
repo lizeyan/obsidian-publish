@@ -9,7 +9,7 @@ tags:
 
 基于MicroRCA，进一步定位S上异常的指标具体是哪个（还是只用了latency来做故障定位）
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Performance Diagnosis in Cloud Microservices using Deep Learning_image_1.png)
 
 核心做法是训练一个AE，学习指标的正常模式。认为对reconstrtuction error贡献越大的指标越异常
 
