@@ -17,7 +17,7 @@ DevNet需要使用的label数目是很少的.
 
 这个文章的思路如下图所示
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Deep Anomaly Detection with Deviation Networks_image_1.png)
 
 首先, 对于每个样本, DevNet通过一个DNN输出一个异常分数$\phi$
 
