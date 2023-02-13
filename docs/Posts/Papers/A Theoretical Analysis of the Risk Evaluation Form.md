@@ -11,15 +11,15 @@ tags:
 # Key Results
 
 The five formulas in ER1 and ER2 are local maximals.
-![](../../attachments/Untitled 1.png)
+![](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_1.png)
 
-![](../../attachments/Untitled 2.png)
+![](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_2.png)
 
-![](../../attachments/Untitled 3.png)
+![](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_3.png)
 
-![](../../attachments/Untitled 4.png)
+![](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_4.png)
 
-![](../../attachments/Untitled.png)
+![](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_5.png)
 
 # Introduction
 
@@ -37,18 +37,18 @@ This work assumes there is only one faulty program element (e.g., statement).
 
 EXAM score: the percentage of program elements that need to be examined before the faulty ones.
 
-![](../../attachments/Untitled 5.png)
-![Since tie-breaking schemes solve a problem that risk evaluation formulas cannot solve. It is reasonable to assume that the tie-breaking scheme  in our analysis is consistent in all risk evaluation formulas](../../attachments/Untitled 6.png)
+![](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_6.png)
+![Since tie-breaking schemes solve a problem that risk evaluation formulas cannot solve. It is reasonable to assume that the tie-breaking scheme  in our analysis is consistent in all risk evaluation formulas](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_7.png)
 
 Since tie-breaking schemes solve a problem that risk evaluation formulas cannot solve. It is reasonable to assume that the tie-breaking scheme  in our analysis is consistent in all risk evaluation formulas
-![Two formulas are equivalent if and only if they have the same number of statements preceding the faulty statement in the ranking lists, that is, they produce the same EXAM score](../../attachments/Untitled 7.png)
+![Two formulas are equivalent if and only if they have the same number of statements preceding the faulty statement in the ranking lists, that is, they produce the same EXAM score](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_8.png)
 
 Two formulas are equivalent if and only if they have the same number of statements preceding the faulty statement in the ranking lists, that is, they produce the same EXAM score
 
-![To to better relationship, we need not to consider S_F when the tie-breaking scheme is consistent.](../../attachments/Untitled 8.png)
+![To to better relationship, we need not to consider S_F when the tie-breaking scheme is consistent.](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_9.png)
 To to better relationship, we need not to consider S_F when the tie-breaking scheme is consistent.
 
-![These assumptions are also the main limitation of this work](../../attachments/Untitled 9.png)
+![These assumptions are also the main limitation of this work](../../attachments/A Theoretical Analysis of the Risk Evaluation Form_image_10.png)
 These assumptions are also the main limitation of this work
 
 # Takeaways
