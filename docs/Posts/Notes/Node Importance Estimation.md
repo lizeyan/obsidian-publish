@@ -1,6 +1,5 @@
 ---
 share: true
-tags:
 ---
 
 |Name|Graph Structure|Multiple Predicates|Node Features|Signal (Signal)|Signal (Multi)|备注|
