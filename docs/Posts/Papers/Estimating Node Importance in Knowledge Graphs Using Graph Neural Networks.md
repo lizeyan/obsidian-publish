@@ -8,7 +8,7 @@ tags:
 
 ## Introduction
 
-![Untitled](../../attachments/Untitled.png)
+![Estimating Node Importance in Knowledge Graphs Using Graph Neural Networks_image_1](../../attachments/Estimating%20Node%20Importance%20in%20Knowledge%20Graphs%20Using%20Graph%20Neural%20Networks_image_1.png)
 
 centrality 是在说结果和节点的connectivity有关。但是这不是知道网络结构自然就知道了么？
 
@@ -16,11 +16,11 @@ flexibility，input score不限定于特定的类型，但是别的方法不应�
 
 ## Methodology
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![Estimating Node Importance in Knowledge Graphs Using Graph Neural Networks_image_2](../../attachments/Estimating%20Node%20Importance%20in%20Knowledge%20Graphs%20Using%20Graph%20Neural%20Networks_image_2.png)
 
 Objective：
 
-![Untitled 2](../../attachments/Untitled%202.png)
+![Estimating Node Importance in Knowledge Graphs Using Graph Neural Networks_image_3](../../attachments/Estimating%20Node%20Importance%20in%20Knowledge%20Graphs%20Using%20Graph%20Neural%20Networks_image_3.png)
 
 所以没有signal给到的节点对objective是没有直接影响，只能通过和其他节点的连边去影响。
 
