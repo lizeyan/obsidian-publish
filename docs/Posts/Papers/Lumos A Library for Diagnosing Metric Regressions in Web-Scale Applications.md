@@ -15,7 +15,7 @@ tags:
 
 这个工具就是主要解决了这两个问题导致的误报，然后对剩下的异常推荐根因feature（不是维度组合，只有维度）
 
-![Untitled](../../attachments/Untitled.png)
+![Lumos A Library for Diagnosing Metric Regressions in Web-Scale Applications_image_1](../../attachments/Lumos%20A%20Library%20for%20Diagnosing%20Metric%20Regressions%20in%20Web-Scale%20Applications_image_1.png)
 
 ## Methodology
 
