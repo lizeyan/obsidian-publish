@@ -1,11 +1,12 @@
 ---
 share: true
+banner: attachments/Zeyan_Li.pdf,attachments/李则言.pdf
 ---
 # Zeyan Li 李则言
 
 ## Bio
 I am a Ph.D. student in Computer Science Department at Tsinghua University, advised by [Prof. Dan Pei](https://netman.aiops.org/~peidan/) in 2018. I am expected to graduate in June 2023. My research interests are AIOps (artificial intelligent operations), failure management, and root cause analysis. I have published several works about failure diagnosis in online service systems in ESEC/FSE, ISSRE, etc. I received my Bachelor's degree in computer science at Tsinghua University in 2014.
-Here is my CV in English (![[attachments/Zeyan_Li.pdf]]) and CV in Chinese (![[attachments/李则言.pdf]]).
+Here is my [CV in English](attachments/Zeyan_Li.pdf)) and [CV in Chinese](attachments/李则言.pdf).
 
 - Google Scholar: [https://scholar.google.com/citations?user=osylUIoAAAAJ&hl=en](https://scholar.google.com/citations?user=osylUIoAAAAJ&hl=en)
 - GitHub: [https://github.com/lizeyan](https://github.com/lizeyan)
