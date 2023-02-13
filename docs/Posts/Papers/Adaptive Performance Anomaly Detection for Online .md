@@ -3,7 +3,7 @@ share: true
 tags:
   - Paper Notes
   - ICSE
-  - 2022
+  - "2022"
   - Time Series Anomaly Detection
 ---
 
