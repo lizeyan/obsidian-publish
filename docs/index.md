@@ -5,7 +5,7 @@ share: true
 
 ## Bio
 I am a Ph.D. student in Computer Science Department at Tsinghua University, advised by [Prof. Dan Pei](https://netman.aiops.org/~peidan/) in 2018. I am expected to graduate in June 2023. My research interests are AIOps (artificial intelligent operations), failure management, and root cause analysis. I have published several works about failure diagnosis in online service systems in ESEC/FSE, ISSRE, etc. I received my Bachelor's degree in computer science at Tsinghua University in 2014.
-Here is my ![CV in English.pdf](./attachments/CV%20in%20English.pdf) and ![中文简历.pdf](./attachments/%E4%B8%AD%E6%96%87%E7%AE%80%E5%8E%86.pdf).
+Here is my [CV in English.pdf](./attachments/CV%20in%20English.pdf) and [中文简历.pdf](./attachments/%E4%B8%AD%E6%96%87%E7%AE%80%E5%8E%86.pdf).
 
 - Google Scholar: [https://scholar.google.com/citations?user=osylUIoAAAAJ&hl=en](https://scholar.google.com/citations?user=osylUIoAAAAJ&hl=en)
 - GitHub: [https://github.com/lizeyan](https://github.com/lizeyan)
