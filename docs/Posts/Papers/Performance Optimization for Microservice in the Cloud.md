@@ -17,7 +17,7 @@ Year: 2020
 
 微服务架构（MS）和其他相似术语的不同之处
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Performance Optimization for Microservice in the Cloud_image_1.png)
 
 - SOA
     - SOA架构中常常使用ESB（总线）通信，而MS不
