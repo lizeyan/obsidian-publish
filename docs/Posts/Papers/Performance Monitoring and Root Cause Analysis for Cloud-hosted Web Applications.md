@@ -64,7 +64,7 @@ bottleneck分析。提出四种方法对组件进行排序，最后通过majorit
 
 注入了5个workload burst，都能检测出来，并且没有误报。不过平时的workload太平稳，bursting的workload太剧烈，评测的数据太简单了
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Performance Monitoring and Root Cause Analysis for Cloud-hosted Web Applications_image_1.png)
 
 #### Bottleneck
 
