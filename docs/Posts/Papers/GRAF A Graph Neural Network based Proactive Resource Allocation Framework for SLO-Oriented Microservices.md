@@ -15,7 +15,7 @@ GRAF的motivation包括两点, 首先是应该同时对所有的microservice进�
 
 第一点原因是cascading effect. 由于进行scaling操作是需要一段时间的, 所以下游的微服务会首先出现资源不足的情况, 然后会进行scaling. 当下游服务scaling完成后, 它所处理的请求就会增加, 此时发送给上游服务的请求才会增加, 然后上游服务出现资源不足. 因此cascading effect会导致整体的scaling时间变长, end-to-end latency提高.
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/GRAF A Graph Neural Network based Proactive Resource Allocation Framework for SLO-Oriented Microservices_image_1.png)
 
 第二点是由于microserivce不同的性质和microservice之间的关系. 比如, 如果一个服务的latency对资源更加敏感, 那么它就需要更多的资源. 另外, 对于处于非关键路径上的微服务, 减少这些微服务的latency并不能影响end-to-end latency.
 
