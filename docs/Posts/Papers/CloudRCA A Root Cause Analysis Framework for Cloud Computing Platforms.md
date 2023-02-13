@@ -3,7 +3,7 @@ share: true
 tags:
   - Paper Notes
   - CIKM
-  - 2021
+  - "2021"
 ---
 
 这篇文章没有太多技术性内容, 整体上是阿里云对自身使用的一套RCA框架的概述.
@@ -22,7 +22,7 @@ tags:
 
 这篇文章提出了一个新的RCA workflow叫做CloudRCA.
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/CloudRCA A Root Cause Analysis Framework for Cloud Computing Platforms_image_1.png)
 
 首先, 对于指标数据, CloudRCA首先采用RobustSTL进行时间序列分解. 然后通过对每个部分进行特定的statistical test来检测特定类型的异常. 这些异常被转化成新的时间序列, anomaly sequence.
 
@@ -32,6 +32,6 @@ tags:
 
 最后会利用这些指标计算一个Bayesian network. 指标之间的结构是由PC算法计算的, 其他的实体的结构是由CMDB指定的.然后通过最大似然的方法计算这个BN上的条件概率表. *这里不是很清楚为什么要这么设计BN的结构, 为什么root cause layer在中间. 下面的type说的是什么东西也不太清楚.*
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/CloudRCA A Root Cause Analysis Framework for Cloud Computing Platforms_image_2.png)
 
 当故障发生时, 把条件概率最大的root cause layer中的节点作为根因.

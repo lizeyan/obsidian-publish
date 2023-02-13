@@ -23,4 +23,4 @@ k通过density-k曲线的local optimum 得到
 在第一次聚类（k=2）的时候，较大的那个类是初始的正常类，将该类的密度的2倍作为密度阈值，到初始正常类的距离超过阈值的就是异常类。Intuition就是正常的曲线（滑动窗口）都应该在初始正常类内或者附近。
 
 数据标注是由自己的experts手动完成的。
-![Untitled-2](../../attachments/Untitled-2.png)
+![KDetect Unsupervised Anomaly Detection for Cloud Systems Based on Time Series Clustering_image_1](../../attachments/KDetect%20Unsupervised%20Anomaly%20Detection%20for%20Cloud%20Systems%20Based%20on%20Time%20Series%20Clustering_image_1.png)
