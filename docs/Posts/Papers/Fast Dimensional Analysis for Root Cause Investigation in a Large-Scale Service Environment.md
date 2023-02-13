@@ -13,7 +13,7 @@ tags:
 
 **Input:**
 
-![A example structured log](../../attachments/Untitled.png)
+![A example structured log](../../attachments/Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_1.png)
 
 A example structured log
 
@@ -35,7 +35,7 @@ This paper proposes a series of preprocessing and filtering techniques to improv
 
 ## Methodology
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_2](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_2.png)
 
 #### User-Specified Filters
 
@@ -112,9 +112,9 @@ Motivation: there can be multiple ﬁndings describing the same group of samples
 
 So this framework proposes two filtering rules:
 
-![Untitled 2](../../attachments/Untitled%202.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_3](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_3.png)
 
-![Untitled 3](../../attachments/Untitled%203.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_4](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_4.png)
 
 $H_*$ are user-specified parameters.
 
@@ -132,7 +132,7 @@ SR: 50 features, 500 distinct feature values, 7000 of thousands distinct itemset
 
 #### The scalability improvement of pre-aggregation
 
-![Untitled 4](../../attachments/Untitled%204.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_5](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_5.png)
 
 #### The scalability improvement of other filtering techniques
 
@@ -142,7 +142,7 @@ Not evaluated
 
 The triangle marker means the actionable association rule.
 
-![Untitled 5](../../attachments/Untitled%205.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_6](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_6.png)
 
 A readable com
 
@@ -154,11 +154,11 @@ Not evaluated
 
 ###### The relationship between the number of reported frequent item-sets and min-support and max-length
 
-![Untitled 6](../../attachments/Untitled%206.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_7](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_7.png)
 
 ###### The relationship between running time and ##itemsets
 
-![Untitled 7](../../attachments/Untitled%207.png)
+![Fast Dimensional Analysis for Root Cause Investigation in a Large-Scale Service Environment_image_8](../../attachments/Fast%20Dimensional%20Analysis%20for%20Root%20Cause%20Investigation%20in%20a%20Large-Scale%20Service%20Environment_image_8.png)
 
 ###### Lessons learned
 
