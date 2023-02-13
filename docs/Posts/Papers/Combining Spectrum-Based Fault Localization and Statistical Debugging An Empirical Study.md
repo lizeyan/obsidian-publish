@@ -41,7 +41,7 @@ Simple SBFL approaches assign suspicious scores for each program element (the gr
 
 Recent approaches also considering collecting information at a granularity finer than the granularity of the target elements.
 
-![A example risk evaluation formula ](../../attachments/Untitled.png)
+![A example risk evaluation formula ](../../attachments/Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_1.png)
 
 A example risk evaluation formula 
 
@@ -51,9 +51,9 @@ Given a faulty program, SD dynamically instruments the program with a set of pre
 
 Similar to SBFL, SD uses a predefined formula to determine the suspicious score of a predicate, a.k.a. importance function.
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_2](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_2.png)
 
-![A standard importance function](../../attachments/Untitled 2.png)
+![A standard importance function](../../attachments/Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_3.png)
 
 A standard importance function
 
@@ -109,32 +109,32 @@ EXAM score. It sound like a relative MFR (mean first rank).
 
 #### Results
 
-![Untitled 3](../../attachments/Untitled%203.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_4](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_4.png)
 
-![Untitled 4](../../attachments/Untitled%204.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_5](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_5.png)
 
-![Untitled 5](../../attachments/Untitled%205.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_6](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_6.png)
 
-![Untitled 6](../../attachments/Untitled%206.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_7](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_7.png)
 
-![Untitled 7](../../attachments/Untitled%207.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_8](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_8.png)
 
-![Untitled 8](../../attachments/Untitled%208.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_9](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_9.png)
 
-![Untitled 9](../../attachments/Untitled%209.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_10](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_10.png)
 
-![Untitled 10](../../attachments/Untitled%2010.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_11](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_11.png)
 
-![Untitled 11](../../attachments/Untitled%2011.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_12](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_12.png)
 
-![Untitled 12](../../attachments/Untitled%2012.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_13](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_13.png)
 
 ## PREDFL
 
 > Therefore, we propose a new fault localization approach via instantiating the uniﬁed model with all default conﬁgurations, i.e., collecting all groups of predicates at statement level and linearly combining predicate scores computed with Ochiai formula. For convenient reference, we call this approach as PREDFL.
 > 
 
-![Untitled 13](../../attachments/Untitled%2013.png)
+![Combining Spectrum-Based Fault Localization and Statistical Debugging An Empirical Study_image_14](../../attachments/Combining%20Spectrum-Based%20Fault%20Localization%20and%20Statistical%20Debugging%20An%20Empirical%20Study_image_14.png)
 
 ## Thinking and Conclusion
 
