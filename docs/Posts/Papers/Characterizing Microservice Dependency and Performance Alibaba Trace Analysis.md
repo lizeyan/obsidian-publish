@@ -13,7 +13,7 @@ tags:
 
 阿里巴巴的微服务架构是在bare metal上运行的kubernetes集群.  在每个bare metal上, 会有若干个pod, 每个pod对应一个微服务的一个实例. 一个微服务可能会有很多个实例, 并且这些实例会被分散在许多不同的bare metal上.  数据库服务(后面讲的stateful 服务) 是运行在单独的集群上的. 而对于其他的服务 (stateless服务), 它们所在bare metal上可能会有batch jobs使用的container. 这些batch jobs是离线的批处理任务, 和整个在线微服务系统不同. 这么部署是为了提高集群的资源利用率. 
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Characterizing Microservice Dependency and Performance Alibaba Trace Analysis_image_1.png)
 
 这篇文章的统计分析从几个方面展开.
 

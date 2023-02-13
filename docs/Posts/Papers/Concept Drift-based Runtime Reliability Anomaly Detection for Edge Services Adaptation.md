@@ -11,15 +11,15 @@ tags:
 
 这篇文章检测的指标是reliability, 定义方法如果所示
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Concept Drift-based Runtime Reliability Anomaly Detection for Edge Services Adaptation_image_1.png)
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/Concept Drift-based Runtime Reliability Anomaly Detection for Edge Services Adaptation_image_2.png)
 
 这个指标反映了一个系统在给定时间内能成功返回结果的概率.
 
 这篇文章总结了四类concept drift, 检测的目标就是这样的concept drift
 
-![Untitled](../../attachments/Untitled 2.png)
+![Untitled](../../attachments/Concept Drift-based Runtime Reliability Anomaly Detection for Edge Services Adaptation_image_3.png)
 
 这篇文章的检测方法分成四步
 

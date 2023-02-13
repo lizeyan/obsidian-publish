@@ -28,7 +28,7 @@ fault和failure：fault是指底层的故障，failure是指整个系统层面�
     2. 每个训练样本为((a1, a2, a3, ..., an), f, r)。其中a_i是异常KPI的id，f是故障类型，r为故障根因。a列表可能为空，f和r也有对应的值表示无异常。
     3. 使用和对比了各种各样的常见机器学习模型
 
-    ![Untitled](../../attachments/Untitled.png)
+    ![Untitled](../../attachments/Predicting failures in multi-tier distributed systems_image_1.png)
     
 
 在线检测部分：

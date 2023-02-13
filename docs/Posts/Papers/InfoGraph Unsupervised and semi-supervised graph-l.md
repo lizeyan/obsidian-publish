@@ -13,7 +13,7 @@ tags:
 
 DGL复现: https://github.com/hengruizhang98/InfoGraph
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/InfoGraph Unsupervised and semi-supervised graph-l_image_1.png)
 
 一个基本的encoder的结构包括若干层的AGGREGATE+COMBINE和一层CONCAT.
 
@@ -21,7 +21,7 @@ DGL复现: https://github.com/hengruizhang98/InfoGraph
 
 对每一层而言, 可以表示成如下形式：$h_v^{(k-1)}\to h_v^{(k)}$,从第k-1层的feature得到第k层的feature
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/InfoGraph Unsupervised and semi-supervised graph-l_image_2.png)
 
 具体来说这篇文章采用了GIN: $\mathbf{x}^{\prime}_i = h_{\mathbf{\Theta}} \left( (1 + \epsilon) \cdot\mathbf{x}_i + \sum_{j \in \mathcal{N}(i)} \mathbf{x}_j \right)$
 
@@ -30,7 +30,7 @@ DGL复现: https://github.com/hengruizhang98/InfoGraph
 
 最后一层concat是为了考虑不同尺度的聚合结果.
 
-![Untitled](../../attachments/Untitled 2.png)
+![Untitled](../../attachments/InfoGraph Unsupervised and semi-supervised graph-l_image_3.png)
 
 最后从单点的feature到全图的feature (a.k.a., READOUT), 这篇文章采用了SUM
 
@@ -45,14 +45,14 @@ DGL复现: https://github.com/hengruizhang98/InfoGraph
 
 直接在训练上述encoder的时候加上supervised loss (如下图), **可能**会导致negative transfer的问题 (*按我理解这里只是存在这样的可能, 具体会不会也没有很强的说理或者实验证据*)
 
-![Untitled](../../attachments/Untitled 3.png)
+![Untitled](../../attachments/InfoGraph Unsupervised and semi-supervised graph-l_image_4.png)
 
 > However, supervised tasks and unsupervised tasks may favor different information or a different semantic space. Simply combining the two loss functions using the same encoder may lead to “negative transfer”
 > 
 
 因此这篇文章提出下如下的框架
 
-![Untitled](../../attachments/Untitled 4.png)
+![Untitled](../../attachments/InfoGraph Unsupervised and semi-supervised graph-l_image_5.png)
 
 此时InfoGraph* 同时训练两个相同结构的encoder.
 

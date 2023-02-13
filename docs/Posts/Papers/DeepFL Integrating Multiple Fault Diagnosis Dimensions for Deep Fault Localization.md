@@ -31,13 +31,13 @@ DeepFL使用深度学习解决这个问题，使用SBFL，MBFL，以及复杂度
 
 作者先介绍了利用RNN做这个的思路：
 
-![Untitled](../../attachments/Untitled.png)
+![DeepFL Integrating Multiple Fault Diagnosis Dimensions for Deep Fault Localization_image_1](../../attachments/DeepFL%20Integrating%20Multiple%20Fault%20Diagnosis%20Dimensions%20for%20Deep%20Fault%20Localization_image_1.png)
 
 但是RNN架构的缺点就是不同的group是共享权重的，并且无法引入更复杂的设计
 
 因此作者提出了这样的多层次的MLP的设计： 
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![DeepFL Integrating Multiple Fault Diagnosis Dimensions for Deep Fault Localization_image_2](../../attachments/DeepFL%20Integrating%20Multiple%20Fault%20Diagnosis%20Dimensions%20for%20Deep%20Fault%20Localization_image_2.png)
 
 ###### Features
 

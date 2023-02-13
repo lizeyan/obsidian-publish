@@ -12,7 +12,7 @@ tags:
 1. 效率。在实际生产环境中，日志的数量是极其巨大的，因此分布式地处理日志是必不可少的。但是，如果简单地将日志随机分配到不同的executor上，那么那些本来属于同一template的日志就会由于context的不同，得到不同的解析结果。因此，一般我们希望尽可能将属于同一template的日志分配到同一executor上。基于prefix-token可以快速实现这种分配，但是由于不同template的日志数量差别极其不平衡，简单如此会导致耗时最长的executor会主导整体的耗时。
 2. 更新。日志的模式可能是在不断变化的，因此最好需要基于用户反馈去不断更新模型
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/SPINE a scalable log parser with feedback guidance_image_1.png)
 
 这篇文章提出的SPINE方法解决了以上两点不足。首先，和以往的log parsing工作一样，SPINE需要对日志做preprocessing。
 
@@ -30,6 +30,6 @@ SPINE在若干个公开数据集上进行了评估。主要评估了性能（和
 
 最好还在实际系统中有验证。
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/SPINE a scalable log parser with feedback guidance_image_2.png)
 
 虽然******这篇文章中的技术看起来都比较基础，但是整个系统非常完整，解决了两个实践中会遇到的挑战，非常实用，最终的评测也很solid，而且确实效果不错。******

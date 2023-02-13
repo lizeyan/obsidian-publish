@@ -11,7 +11,7 @@ tags:
 
 Fixing crashes in time is important. Automated crash reporting systems collects information at the time of crash.
 
-![crash reporter](../../attachments/Untitled.png)
+![crash reporter](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_1.png)
 
 crash reporter
 
@@ -19,7 +19,7 @@ The number of crash reports is huge. Thus, it is not practical to process them o
 
 Crash reports contain a lot of attributes.
 
-![Untitled 1](../../attachments/Untitled 1.png)
+![Untitled 1](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_2.png)
 
 A typical process workflow consists of two steps:
 
@@ -42,17 +42,17 @@ The deviation should be **large** and **significant**.
 
 Large: the supports in at least one pair of groups should be different enough.
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 2.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_3.png)
 
 Significant: rejecting the hypothesis that the supports in all groups are the same
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 3.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_4.png)
 
 #### STUCCO
 
 STUCCO performs a breadth-first level-wise search in the tree
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 4.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_5.png)
 
 ###### Selecting Large Contrast-Sets
 
@@ -62,7 +62,7 @@ calculating support and comparing it with the user-defined threshold
 
 performing chisquare test and get a significance level $\alpha$
 
-![Example contingency table for p=W](../../attachments/Untitled 5.png)
+![Example contingency table for p=W](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_6.png)
 
 Example contingency table for p=W
 
@@ -73,13 +73,13 @@ What is challenging here is to determine the cutoff significance level. The chal
 
 According to the Bonferroni correction, we can control the overall false alarm rate by downscale the threshold:
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 6.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_7.png)
 
 But we do not know $k_{true}$.
 
 Since Bonferroni correction holds as long as $\sum \alpha_i < \alpha$, so we downscale the threshold level-wise
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 7.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_8.png)
 
 where $C_l$ is the number of candidates of level $l$  ($\sum_{l}\frac{\alpha}{C_l 2^l}\le \sum_l\frac{\alpha}{2^l}\le \alpha$)
 
@@ -119,7 +119,7 @@ If the support of the specialization can be derived based on an independence con
 > When a dependency is found, the percentage of occurrence is recalculated restricting the group to the reports where the dependency holds true
 > 
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 8.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_9.png)
 
 ## Evaluation
 
@@ -128,7 +128,7 @@ Over 800 real crash reports in Mozilla.
 > For **90 of these reports (41 closed)** we have definitive evidence that our tool was used
 > 
 
-![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Untitled 9.png)
+![attachments/Automatically%20Analyzing%20Groups%20of%20Crashes%20for%20Find/Untitled%202.png](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_10.png)
 
 ## Takeaways
 
@@ -157,7 +157,7 @@ where $tpg1_e=(tpg1+tpg2)*\frac{tpg1+npg1}{tpg1+tpg2+npg1+npg2}, npg1_e=(npg1+np
 
 Note that $npg2$ is used.
 
-![confidence and significance (chisquare) are different](../../attachments/Untitled 10.png)
+![confidence and significance (chisquare) are different](../../attachments/Automatically Analyzing Groups of Crashes for Find_image_11.png)
 
 confidence and significance (chisquare) are different
 

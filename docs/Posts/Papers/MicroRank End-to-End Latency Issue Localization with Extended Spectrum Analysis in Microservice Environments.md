@@ -13,4 +13,4 @@ Rank: A
 Short Name: MicroRank
 Year: 2020
 
-![MicroRank_End-to-End_Latency_Issue_Localization_with_Extended_Spectrum_Analysis_in_Microservice_Environments.svg](../../attachments/MicroRank_End-to-End_Latency_Issue_Localization_with_Extended_Spectrum_Analysis_in_Microservice_Environments.svg.svg)
+![MicroRank End-to-End Latency Issue Localization with Extended Spectrum Analysis in Microservice Environments_image_1](../../attachments/MicroRank%20End-to-End%20Latency%20Issue%20Localization%20with%20Extended%20Spectrum%20Analysis%20in%20Microservice%20Environments_image_1.svg)

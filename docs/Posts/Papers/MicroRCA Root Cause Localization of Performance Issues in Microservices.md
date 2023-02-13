@@ -12,11 +12,11 @@ tags:
 3. 计算边的权重和节点的分数
 4. PPR
 
-![Untitled](../../attachments/Untitled.png)
+![MicroRCA Root Cause Localization of Performance Issues in Microservices_image_1](../../attachments/MicroRCA%20Root%20Cause%20Localization%20of%20Performance%20Issues%20in%20Microservices_image_1.png)
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![MicroRCA Root Cause Localization of Performance Issues in Microservices_image_2](../../attachments/MicroRCA%20Root%20Cause%20Localization%20of%20Performance%20Issues%20in%20Microservices_image_2.png)
 
-![Untitled 2](../../attachments/Untitled%202.png)
+![MicroRCA Root Cause Localization of Performance Issues in Microservices_image_3](../../attachments/MicroRCA%20Root%20Cause%20Localization%20of%20Performance%20Issues%20in%20Microservices_image_3.png)
 
 相比MonitorRank的优势是能够避免RC和frontend离得远导致的关联性不强的情况
 

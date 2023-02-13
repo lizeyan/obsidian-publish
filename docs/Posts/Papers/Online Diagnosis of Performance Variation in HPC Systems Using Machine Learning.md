@@ -24,7 +24,7 @@ HPC系统中的异常检测和定位是一个重要的问题, 人工定位存在
 
 这篇文章的方法如下图所示
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Online Diagnosis of Performance Variation in HPC Systems Using Machine Learning_image_1.png)
 
 在训练阶段, 首先需要收集训练数据.
 

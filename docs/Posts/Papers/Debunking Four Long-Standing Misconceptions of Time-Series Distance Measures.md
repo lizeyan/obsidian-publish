@@ -29,9 +29,9 @@ z-normalization被普遍默认使用，但是没有文章分析过normalization�
 
 这篇文章发现其他lockstep方法显著地比ED好
 
-![Untitled](../../attachments/Untitled.png)
+![Debunking Four Long-Standing Misconceptions of Time-Series Distance Measures_image_1](../../attachments/Debunking%20Four%20Long-Standing%20Misconceptions%20of%20Time-Series%20Distance%20Measures_image_1.png)
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![Debunking Four Long-Standing Misconceptions of Time-Series Distance Measures_image_2](../../attachments/Debunking%20Four%20Long-Standing%20Misconceptions%20of%20Time-Series%20Distance%20Measures_image_2.png)
 
 ###### elastic方法是不是总是比sliding方法好
 
@@ -39,7 +39,7 @@ z-normalization被普遍默认使用，但是没有文章分析过normalization�
 
 实际上，如果不通过cross validation方法调参，只有MSSM和TWE比cross correlation更好（DTW都没有做到）
 
-![Untitled 2](../../attachments/Untitled%202.png)
+![Debunking Four Long-Standing Misconceptions of Time-Series Distance Measures_image_3](../../attachments/Debunking%20Four%20Long-Standing%20Misconceptions%20of%20Time-Series%20Distance%20Measures_image_3.png)
 
 ###### DTW是不是最好的elastic方法
 
@@ -47,8 +47,8 @@ z-normalization被普遍默认使用，但是没有文章分析过normalization�
 
 MSM也基于编辑距离，但是它是一个metric（应该指的是泛函分析的度量概念，DTW和TWE都不是，不满足三角不等式）
 
-![Untitled 3](../../attachments/Untitled%203.png)
+![Debunking Four Long-Standing Misconceptions of Time-Series Distance Measures_image_4](../../attachments/Debunking%20Four%20Long-Standing%20Misconceptions%20of%20Time-Series%20Distance%20Measures_image_4.png)
 
 TWE结合了LCSS和DTW，也是一个metric
 
-![Untitled 4](../../attachments/Untitled%204.png)
+![Debunking Four Long-Standing Misconceptions of Time-Series Distance Measures_image_5](../../attachments/Debunking%20Four%20Long-Standing%20Misconceptions%20of%20Time-Series%20Distance%20Measures_image_5.png)

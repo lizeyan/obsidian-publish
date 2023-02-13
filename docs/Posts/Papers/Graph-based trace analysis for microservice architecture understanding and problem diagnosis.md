@@ -16,11 +16,11 @@ Year: 2020
 
 这篇文章提出了一个处理和分析trace数据的系统 GMTA
 
-![Untitled](../../attachments/Untitled.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_1](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_1.png)
 
 ## trace数据的表示
 
-![Untitled 1](../../attachments/Untitled%201.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_2](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_2.png)
 
 有完全相同结构的trace被抽象为path，span被抽象为对应的hop。
 
@@ -28,7 +28,7 @@ Year: 2020
 
 EP chain指的是error propagation chain，是通过span里的error字段收集的。
 
-![图上红色和绿色的粗箭头分别是两个path的hops](../../attachments/Untitled 2.png)
+![图上红色和绿色的粗箭头分别是两个path的hops](../../attachments/Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_3.png)
 
 图上红色和绿色的粗箭头分别是两个path的hops
 
@@ -57,7 +57,7 @@ EP chain指的是error propagation chain，是通过span里的error字段收集�
 
 通过hash算法快速匹配结构相同的trace。
 
-![Untitled 3](../../attachments/Untitled%203.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_4](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_4.png)
 
 #### Business Flow Identification
 
@@ -92,7 +92,7 @@ A business flow can be defined as a logical combination (using AND/OR operations
 
 OLAP databases like Druid and Clickhouse
 
-![Untitled 4](../../attachments/Untitled%204.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_5](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_5.png)
 
 ## Use Case: Architecture Understanding
 
@@ -104,11 +104,11 @@ U3. as SREs, to confirm the changes or patterns of service behaviors, and evalua
 
 U1和U2通过直接调用对trace，path和business flow的可视化实现
 
-![Untitled 5](../../attachments/Untitled%205.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_6](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_6.png)
 
 U3可以通过GMTA对两个不同时间的对象的比较实现
 
-![Untitled 6](../../attachments/Untitled%206.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_7](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_7.png)
 
 ## Use Case：Problem Diagnosis
 
@@ -144,4 +144,4 @@ thousands of paths
 > In the study, we compare GMTA with two traditional trace processing approaches, i.e., OTD-R and ATD-R, qualitatively and quantitatively. OTD-R stores the original trace data (i.e., spans, traces, and their properties) in a relational analytics database. ATD-R aggregates the traces into paths but still stores the trace and path data in a relational analytics database.
 > 
 
-![Untitled 7](../../attachments/Untitled%207.png)
+![Graph-based trace analysis for microservice architecture understanding and problem diagnosis_image_8](../../attachments/Graph-based%20trace%20analysis%20for%20microservice%20architecture%20understanding%20and%20problem%20diagnosis_image_8.png)

@@ -17,7 +17,7 @@ ADSketch的目标输入是一对指标（更准确应该是）同一个指标的
 
 ADSketcher分为离线异常检测和在线异常检测两步。在离线异常检测部分，需要发现所有的metric pattern。在在线异常检测部分，会对这些metric pattern进行更新。
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Adaptive Performance Anomaly Detection for Online _image_1.png)
 
 在离线异常检测部分，对于$\Gamma_n$上的每一个区段，会首先计算它在自身和$\Gamma_n$中分别的最相似区段，记为$\mathcal{I}_{nn}$和$\mathcal{I}_{na}$。计算相似度的方法论文中采用了简单的欧氏距离。为了对效率做优化，这里特别采用了STAMP算法。STAMP算法可以对大数据集非常快速地得到近似解。
 

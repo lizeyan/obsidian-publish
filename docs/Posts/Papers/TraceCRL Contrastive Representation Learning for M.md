@@ -37,7 +37,7 @@ tags:
 
 编码了一系列features：
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/TraceCRL Contrastive Representation Learning for M_image_1.png)
 
 #### 如何学习embedding
 
@@ -47,17 +47,17 @@ tags:
 
  
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/TraceCRL Contrastive Representation Learning for M_image_2.png)
 
 构造不相似的trace主要是通过模拟异常的方式进行的：
 
-![Untitled](../../attachments/Untitled 2.png)
+![Untitled](../../attachments/TraceCRL Contrastive Representation Learning for M_image_3.png)
 
 构造相似的trace（准确说是trace的表示）主要是通过masking的方式进行的。Masking仅仅掩蔽features，结构是保留的。而其中的第三种方式，subgraph sampling，是连结构一起去掉。
 
 **********************************************************************************************************************************************Subgraph sampling是不是会和上面的invocation interruption比较像呢？我理解还是有一些区别的，subgrapgh sampling至少仍然保证了往上游服务的random walk sequence还是一致的，所以DeepWalk给出的embedding可能变化会比较小。**********************************************************************************************************************************************
 
-![Untitled](../../attachments/Untitled 3.png)
+![Untitled](../../attachments/TraceCRL Contrastive Representation Learning for M_image_4.png)
 
 #### 实验
 
