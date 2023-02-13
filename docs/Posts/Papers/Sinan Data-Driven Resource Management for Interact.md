@@ -12,7 +12,7 @@ tags:
 
 ## Methodology
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Sinan Data-Driven Resource Management for Interact_image_1.png)
 
 通过当前的资源利用率，历史的资源利用率以及latency，预测当前的延迟
 
