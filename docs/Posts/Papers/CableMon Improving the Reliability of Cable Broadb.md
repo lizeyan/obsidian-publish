@@ -39,7 +39,7 @@ previous works使用阈值选择。但是1）阈值很难选（本文下面提�
 
 首先对每个CM的所有time series，CableMon提取了几个经典的features：
 
-![Untitled.png](/Untitled.png)
+![CableMon Improving the Reliability of Cable Broadb_image_1](../../attachments/CableMon%20Improving%20the%20Reliability%20of%20Cable%20Broadb_image_1.png)
 
 其中有几个算法需要超参数，因此CableMon同时采用了多种可能的超参数。
 
@@ -63,15 +63,15 @@ ticket prediction accuracy=## true prediction / ## all prediction
 2. ticket coverage
 true prediction中包含的ticket数量/ticket的总数量
 
-![两个超参数对结果的影响。还是比较敏感的](../../attachments/Untitled 1.png)
+![两个超参数对结果的影响。还是比较敏感的](../../attachments/CableMon Improving the Reliability of Cable Broadb_image_2.png)
 
 两个超参数对结果的影响。还是比较敏感的
 
-![](../../attachments/Untitled 2.png)
-![](../../attachments/Untitled 3.png)
-![](../../attachments/Untitled 4.png)
+![](../../attachments/CableMon Improving the Reliability of Cable Broadb_image_3.png)
+![](../../attachments/CableMon Improving the Reliability of Cable Broadb_image_4.png)
+![](../../attachments/CableMon Improving the Reliability of Cable Broadb_image_5.png)
 
-![baseline也太弱了，有监督分类器存在很多不可克服的缺陷，但是还是远远超过previous work了](../../attachments/Untitled 5.png)
+![baseline也太弱了，有监督分类器存在很多不可克服的缺陷，但是还是远远超过previous work了](../../attachments/CableMon Improving the Reliability of Cable Broadb_image_6.png)
 
 baseline也太弱了，有监督分类器存在很多不可克服的缺陷，但是还是远远超过previous work了
 
