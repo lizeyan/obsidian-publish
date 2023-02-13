@@ -1,11 +1,11 @@
-site_name: your_site_name # Change this to your site name
+site_name: Zeyan Li's Homepage # Change this to your site name
 site_description: A cool description of your site
-site_url: https://change_me.io/ # Change this to your site URL
+site_url: https://www.lizeyan.me # Change this to your site URL
 
 theme:
     name: 'material'
-    logo: assets/meta/favicons.png
-    favicon: assets/meta/favicons.png
+    logo: assets/meta/favicons.jpg
+    favicon: assets/meta/favicons.jpg
     custom_dir: overrides
     font:
         text: Ubuntu
@@ -131,7 +131,7 @@ extra_css:
     - assets/css/custom_attributes.css
     - assets/css/customization.css
 extra:
-  SEO: assets/meta/SEO.png
+  SEO: assets/meta/favicons.png
   comments: false #disable comments globally
   generate_graph: true #generate the graph of the site
   attachments: 'assets/img' #path to the folder where the attachments are stored

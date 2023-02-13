@@ -1,2 +1,5 @@
 .vscode/settings.json
 desktop.ini
+.DS_store
+.venv
+__pycache__/
