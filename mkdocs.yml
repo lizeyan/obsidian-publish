@@ -4,8 +4,8 @@ site_url: https://www.lizeyan.me # Change this to your site URL
 
 theme:
     name: 'material'
-    logo: assets/meta/favicons.jpg
-    favicon: assets/meta/favicons.jpg
+    logo: assets/logo/favicons.jpg
+    favicon: assets/logo/favicons.jpg
     custom_dir: overrides
     font:
         text: Ubuntu
@@ -83,7 +83,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
-      locale: fr
+      locale: en
       custom_format: "%A %d %B %Y"
       enable_creation_date: true
   - ezlinks:
@@ -131,10 +131,10 @@ extra_css:
     - assets/css/custom_attributes.css
     - assets/css/customization.css
 extra:
-  SEO: assets/meta/favicons.png
-  comments: false #disable comments globally
+  SEO: assets/logo/favicons.png
+  comments: true #disable comments globally
   generate_graph: true #generate the graph of the site
-  attachments: 'assets/img' #path to the folder where the attachments are stored
+  attachments: 'attachments' #path to the folder where the attachments are stored
   blog_list:
     pagination: true #enable pagination
     pagination_message: true #display the message "Showing x posts out of y"
