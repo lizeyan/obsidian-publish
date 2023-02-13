@@ -11,9 +11,9 @@ tags:
 
 现有的工作许多都采用了告警的文本特征作为判断告警是否属于同一类的依据, 但是实际上同一个故障触发的告警可能有很不同的文本描述. 因此这篇文章希望用告警的时序和拓扑关联关系来做聚合.
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/Graph-based Incident Aggregation for Large-Scale Online Service Systems_image_1.png)
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/Graph-based Incident Aggregation for Large-Scale Online Service Systems_image_2.png)
 
 这篇文章的方法, GRLIA (graph representation learning-based incident aggregation), 包含四个部分.
 
