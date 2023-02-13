@@ -17,7 +17,7 @@ Year: 2020
 
 ## Introduction
 
-![Untitled](../../attachments/Untitled.png)
+![Untitled](../../attachments/MultiImport Inferring Node Importance in a Knowled_image_1.png)
 
 KG上的节点重要性排序问题是个重要的问题。
 
@@ -29,13 +29,13 @@ KG上的节点重要性排序问题是个重要的问题。
 
 ## Methodology
 
-![Untitled](../../attachments/Untitled 1.png)
+![Untitled](../../attachments/MultiImport Inferring Node Importance in a Knowled_image_2.png)
 
 ###### Perliminary
 
 GNN
 
-![Untitled](../../attachments/Untitled 2.png)
+![Untitled](../../attachments/MultiImport Inferring Node Importance in a Knowled_image_3.png)
 
 Knowledge Graph (KG)，$\mathbf{G}\in \mathbb{R}^{||V||\times ||P|| \times ||V||}$，每个元素$(s, p, o)$代表节点s和o通过谓词p连接。两个节点之间可以存在多个谓词
 
@@ -47,21 +47,21 @@ Input Signal. $S: V' \to \mathbb{R}_{\ge 0}, V'\sube V$
 
 ###### Learning Objective
 
-![Untitled](../../attachments/Untitled 3.png)
+![Untitled](../../attachments/MultiImport Inferring Node Importance in a Knowled_image_4.png)
 
-![Untitled](../../attachments/Untitled 4.png)
+![Untitled](../../attachments/MultiImport Inferring Node Importance in a Knowled_image_5.png)
 
 这个方法叫 factorization-based KG embeddings
 
-![Untitled](../../attachments/Untitled 5.png)
+![Untitled](../../attachments/MultiImport Inferring Node Importance in a Knowled_image_6.png)
 
-![Untitled 6](../../attachments/Untitled%206.png)
+![MultiImport Inferring Node Importance in a Knowled_image_7](../../attachments/MultiImport%20Inferring%20Node%20Importance%20in%20a%20Knowled_image_7.png)
 
-![Untitled 7](../../attachments/Untitled%207.png)
+![MultiImport Inferring Node Importance in a Knowled_image_8](../../attachments/MultiImport%20Inferring%20Node%20Importance%20in%20a%20Knowled_image_8.png)
 
 （这里讲了一大堆最后还是用了softmax？）
 
-![Untitled 8](../../attachments/Untitled%208.png)
+![MultiImport Inferring Node Importance in a Knowled_image_9](../../attachments/MultiImport%20Inferring%20Node%20Importance%20in%20a%20Knowled_image_9.png)
 
 比起GENI来说，一个显著的不同是考虑了$p(\mathcal{G}|\mathcal{\theta})$
 
@@ -73,9 +73,9 @@ Input Signal. $S: V' \to \mathbb{R}_{\ge 0}, V'\sube V$
 
 所以这里的做法是先给Signal聚类，每个类单独训练，最后选一个类的结果
 
-![Untitled 9](../../attachments/Untitled%209.png)
+![MultiImport Inferring Node Importance in a Knowled_image_10](../../attachments/MultiImport%20Inferring%20Node%20Importance%20in%20a%20Knowled_image_10.png)
 
-![Untitled 10](../../attachments/Untitled%2010.png)
+![MultiImport Inferring Node Importance in a Knowled_image_11](../../attachments/MultiImport%20Inferring%20Node%20Importance%20in%20a%20Knowled_image_11.png)
 
 因为直接用signal计算相似度是不行的，需要用生成的importance计算，所以需要一边训练一边聚类，不能直接聚类。
 
