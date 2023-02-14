@@ -118,6 +118,12 @@ $$
 ## Chapter 4: Learning Cause-Effect Models
 ### Structure Identifiability
 是否可以仅从联合分布$P(X, Y)$，区分 X和 Y 的因果关系（即 strcuture）？答案是否定的，不行。
-> [!定理] 给定任何一个联合分布$P(X, Y)$, 都可以找到一个SCM，其中$Y:=f_Y(X, N_Y)$, $X \perp Y$
+> [!定理] 给定任何一个联合分布$P(X, Y)$, 都可以找到一个SCM，其中$Y:=f_Y(X, N_Y)$, $X \perp \!\!\! \perp Y$
 
+所以，必须要做出一些假设，在这些假设成立的前提下才能实现 indentifiability
+一般这样的假设有两类，一种是限制$f_E$ 在一个比较小的类中，另一种是限制$P(C)$和$P(E|C)$。
+> [!argument] We only argue for the belief that if there is a simple function that ﬁts the data, it is more likely to also describe a causal relation
+
+### Linear models with Non-Gaussian Additive Noise
+> [!Assumption] LiNGAM: $E = \alpha C + N_E$
 
