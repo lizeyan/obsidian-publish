@@ -5,7 +5,7 @@ tags:
   - Causal Inference
 ---
 
-## Chapter 2: Cause-Effect Models
+## Chapter 3: Cause-Effect Models
 ### SCM 的记号
 假设有如下这样一个 SCM
 $$
@@ -33,7 +33,91 @@ C := N_C \\ E := 4\cdot C + N_E \\ N_C, N_E\stackrel{i.i.d.}{\sim}\mathcal{N}(0,
 $$
 Show that $P_{C|E=2}$ follows Gaussian distribution.
 **Solution**:
-
+根据贝叶斯公式
 $$
 p_{C|E=2}=\frac{p(E=2|C)p(C)}{p(E=2)}
 $$
+其中，
+$$
+p(C=c)=\mathcal{N}(0, 1)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{c^2}{2})
+$$
+$$
+p(E=x|C=c)=\mathcal{N}(4c, 1)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{(x-4c)^2}{2})
+$$
+$$
+p(E=x)=\int_{-\infty}^{+\infty}p(E=x|C=c)p(C=c)dc=N(0, 17)
+$$
+[[https://www.wolframalpha.com/input?i=integrate+1+%2F+sqrt%282+*+%5Cpi%29+*+exp+%28-1%2F2+*+%28x+-+4c%29%5E2%29+*+1+%2F+sqrt%282+*+%5Cpi%29+*+exp+%28-1%2F2+*+%28c%29%5E2%29%2C+c+from+-inf+to+inf]]
+所以，
+$$
+\begin{aligned}
+p_{C|E=2}&=\frac{\frac{1}{\sqrt{2\pi}}\exp(-\frac{(2-4c)^2}{2}) \cdot \frac{1}{\sqrt{2\pi}}\exp(-\frac{c^2}{2})}{\frac{1}{\sqrt{34\pi}}\exp(-\frac{2^2}{34})} \\
+&=\frac{1}{\sqrt{\frac{2}{17}\pi}}exp(-2+8c-8c^2-\frac{1}{2}c^2+\frac{2}{17}) \\
+&=\frac{1}{\sqrt{\frac{1}{17}}\sqrt{2\pi}}exp(-\frac{1}{2}\frac{(c^2-2\cdot\frac{8}{17}c +\frac{8}{17}^2)}{\frac{1}{17}})\\
+&=\mathcal{N}(\frac{8}{17},\frac{1}{17})
+\end{aligned}
+$$
+#### Problem 3.7
+![Elements of Causal Inference Foundations_image_1](../attachments/Elements%20of%20Causal%20Inference%20Foundations_image_1.png)
+do(Y=constant)，如果此时 X与Y不独立，那么是前者，否则是后者
+#### Problem 3.8
+![Elements of Causal Inference Foundations_image_2](../attachments/Elements%20of%20Causal%20Inference%20Foundations_image_2.png)
+Solution:
+a)
+$$
+\begin{aligned}
+\begin{cases}
+\alpha = 2\gamma + 1 \\
+\beta = 2 \cdot \delta \\
+\gamma=2\cdot\alpha \\
+\delta=2\cdot\beta +1
+\end{cases} \Rightarrow
+\begin{cases}
+\alpha=4\alpha + 1\\
+\beta=4\beta + 2
+\end{cases}
+\Rightarrow
+\begin{cases}
+\alpha=-\frac{1}{3}\\
+\beta=-\frac{2}{3}\\
+\gamma=-\frac{2}{3}\\
+\delta=-\frac{1}{3}
+\end{cases}
+\end{aligned}
+$$
+b)
+$$
+\begin{aligned}
+\begin{cases}
+\alpha = \gamma + 1 \\
+\beta =  \delta \\
+\gamma=\alpha \\
+\delta=\beta +1
+\end{cases} \Rightarrow
+\begin{cases}
+\alpha=\alpha + 1\\
+\beta=\beta + 1
+\end{cases}
+\Rightarrow
+\text{No solution}
+\end{aligned}
+$$
+为了让SCM有解，可以设$N_X=aN$, $N_Y=bN$
+则上述方程可以变成
+$$
+\begin{aligned}
+\begin{cases}
+\alpha a + \beta b = \gamma a + \delta b + a \\
+\gamma a + \delta b = \alpha a + \beta b + b
+\end{cases}
+\Rightarrow a + b = 0
+\end{aligned}
+$$
+所以，可以令$N_X\sim N(0, 1)$, $N_Y:=-N_X$, $X:=2N_X$, $Y=-N_Y$
+
+## Chapter 4: Learning Cause-Effect Models
+### Structure Identifiability
+是否可以仅从联合分布$P(X, Y)$，区分 X和 Y 的因果关系（即 strcuture）？答案是否定的，不行。
+> [!定理] 给定任何一个联合分布$P(X, Y)$, 都可以找到一个SCM，其中$Y:=f_Y(X, N_Y)$, $X \perp Y$
+
+
