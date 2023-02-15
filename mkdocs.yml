@@ -115,9 +115,10 @@ hooks:
   - overrides/hooks/on_page_markdown.py
   - overrides/hooks/on_env.py
 extra_javascript:
-  - assets/js/kajax.js
+  - assets/js/mathjax.js
   - assets/js/utils.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - assets/js/chirpy.js
   - assets/js/wiki_hover.js
 extra_css:
@@ -129,7 +130,6 @@ extra_css:
     - assets/css/admonition.css
     - assets/css/custom_attributes.css
     - assets/css/customization.css
-    - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css
 extra:
   SEO: assets/logo/favicons.png
   comments: true #disable comments globally
