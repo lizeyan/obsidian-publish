@@ -61,8 +61,6 @@ In other words, Revelio firstly predicts the query template (the categories of t
 
 To simplify the model further, Revelio assumes that query parameters are independent with the user report:
 
- 
-
 $$
 P(U|T,R,L)=P(U|T, L)
 $$
