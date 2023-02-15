@@ -8,6 +8,7 @@ tags:
 ## Chapter 3: Cause-Effect Models
 ### SCM 的记号
 假设有如下这样一个 SCM
+
 $$
 \begin{aligned}
 C &:= N_C \\
@@ -26,6 +27,7 @@ $$
 #### Problem 3.6
 **Problem**:
 Given that 
+
 $$
 \begin{aligned}
 C := N_C \\ E := 4\cdot C + N_E \\ N_C, N_E\stackrel{i.i.d.}{\sim}\mathcal{N}(0, 1)
