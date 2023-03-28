@@ -11,7 +11,7 @@ tags:
 该论文提出了一种可操作、可解释的面向在线服务系统中重复类型故障的故障定位方法，DéjàVu。DéjàVu的名字来自一个法语短语 déjà vu，意思是似曾相识。DéjàVu 采用了一种基于图神经网络的定位模型，该模型以故障发生时在线服务系统中各个组件的监控指标和组件间的依赖关系作为输入，输出故障的位置和类型给运维人员。同时，该论文还提出了两种提供可解释性的方法。实验结果表明DéjàVu可以将真正的故障根因平均排序到第 1.66~5.03 名，优于对比算法 54.52%∼97.92%，并且具有良好的时间效率和泛化性。
 
 该论文的代码和数据都已开源在 GitHub 上：[NetManAIOps/DejaVu: Code and datasets for FSE'22 paper "Actionable and Interpretable Fault Localization for Recurring Failures in Online Service Systems" (github.com)](https://github.com/NetManAIOps/DejaVu)
-论文原文的链接是 https://netman.aiops.org/wp-content/uploads/2022/11/DejaVu-paper.pdf
+论文原文的链接是 [[https://netman.aiops.org/wp-content/uploads/2022/11/DejaVu-paper.pdf]]
 
 ## 背景
 
@@ -67,7 +67,7 @@ DéjàVu 将所有故障单元按根因分数降序排序，推荐给运维人�
 ### 定位准确率
 该论文同若干类故障定位方法中最新的工作进行了对比，部分结果如下图所示
 ![Actionable and Interpretable Fault Localization for Recurring Failures in Online Service Systems_image_8](../../attachments/Actionable%20and%20Interpretable%20Fault%20Localization%20for%20Recurring%20Failures%20in%20Online%20Service%20Systems_image_8.png)
-其中，MAR 表示 DéjàVu 为每个故障根因给出的平均排名，A@k 表示 DéjàVu 给出的前 k 个推荐故障单元中包含真正根因的概率。效应值（Cohen's d，参见下图或者 https://www.wikiwand.com/en/Effect_size#Cohen's_d ）和 p 值（t-test，小于0.05即显著）表示 DéjàVu 相比于对比算法提升的统计显著性，都是基于 MAR 进行计算的。
+其中，MAR 表示 DéjàVu 为每个故障根因给出的平均排名，A@k 表示 DéjàVu 给出的前 k 个推荐故障单元中包含真正根因的概率。效应值（Cohen's d，参见下图或者 [[https://www.wikiwand.com/en/Effect_size#Cohen's_d]] ）和 p 值（t-test，小于0.05即显著）表示 DéjàVu 相比于对比算法提升的统计显著性，都是基于 MAR 进行计算的。
 ![Actionable and Interpretable Fault Localization for Recurring Failures in Online Service Systems_image_9](../../attachments/Actionable%20and%20Interpretable%20Fault%20Localization%20for%20Recurring%20Failures%20in%20Online%20Service%20Systems_image_9.png)
 
 在各个数据集上，DéjàVu 的 MAR 达到了 1.66∼5.03，优于对比算法 11.84%∼99.41%。DéjàVu 的 MAR 平均可以达到 2.82，低于对比算法 54.52%∼97.92%。总的来说，DéjàVu 能够取得良好的故障定位性能，并显著超 越对比算法。
@@ -82,7 +82,7 @@ DéjàVu 将所有故障单元按根因分数降序排序，推荐给运维人�
 ![Actionable and Interpretable Fault Localization for Recurring Failures in Online Service Systems_image_11](../../attachments/Actionable%20and%20Interpretable%20Fault%20Localization%20for%20Recurring%20Failures%20in%20Online%20Service%20Systems_image_11.png)
 
 ## 可复现性（Reproducability）
-该论文的数据集、代码和用于构建 Train-Ticket 数据集的代码都已经开源：https://github.com/NetManAIOps/DejaVu
+该论文的数据集、代码和用于构建 Train-Ticket 数据集的代码都已经开源：[[https://github.com/NetManAIOps/DejaVu]]
 
 在每个数据集中，有几个关键的文件：
 - `faults.csv` 记录了所有故障时间的时间和根因
@@ -99,7 +99,7 @@ DéjàVu 将所有故障单元按根因分数降序排序，推荐给运维人�
 - `FDG_data_collection/` 包含收集指标数据的脚本
 - `workload/` 包含生成流量的脚本
 
-## 讨论与总结
+## 讨论
 
 - 该论文聚焦于在线服务系统中的可操作故障定位问题，并提出了一种面向重复类型故障的可操作、可解释定位方法，DéjàVu。和此前的故障定位工作不同，DéjàVu将定位目标限定在了“性价比”最高的"可操作"层次。
 - 基于对实际系统的调研，DéjàVu 仅面向重复类型故障进行故障定位。实际上，对于非重复类型故障，我们也不太可能让算法给出一个从来没出现过、没定义过的故障类型。但是在实际系统中，非重复类型故障仍然是经常出现的，此时 DéjàVu 给出的定位结果是不可信的。对此，我们可以借助 DéjàVu 中提出的计算故障相似度的方法，如果当前故障和所有历史故障都不太相似，那么它就很可能是非重复类型故障，我们可以通知运维人员采用其他方法得到的定位结果而不依赖 DéjàVu 。
@@ -107,6 +107,9 @@ DéjàVu 将所有故障单元按根因分数降序排序，推荐给运维人�
 - DéjàVu目前仅仅将指标作为故障单元的输入特征。通过神经网络，可以比较容易地融合日志等多模态数据作为故障单元的输入特征。
 - DéjàVu存在的一个局限性是难以表征未知的故障类型。因为目前故障单元的定义依赖已知的故障类型和对应的指标组。但是如果发生的故障是新类型时，描述已知类型故障的指标不一定能描述新类型故障，那么此时用已知故障单元的聚合特征计算故障相似度就可能存在问题。如果用每个组件上的所有指标作为输入特征，那么输入维度会过高，难以训练模型。
 
-
-
+## 总结
+本文介绍了在线服务系统中一个面向重复类型故障的可操作故障定位方法，DéjàVu。由于篇幅所限，本文没有涉及过多的细节，详细内容请查看原论文。
+论文名称：Actionable and Interpretable Fault Localization for Recurring Failures in Online Service Systems
+论文作者：Zeyan Li, Nengwen Zhao, Mingjie Li, Xianglin Lu, Lixin Wang, Dongdong Chang,  Xiaohui Nie, Li Cao, Wenzhi Zhang, Kaixin Sui, Yanhua Wang, Xu Du, Guoqiang Duan, Dan Pei
+论文地址：[[https://netman.aiops.org/wp-content/uploads/2022/11/DejaVu-paper.pdf]] 或者 [[https://dl.acm.org/doi/abs/10.1145/3540250.3549092]] 
 
