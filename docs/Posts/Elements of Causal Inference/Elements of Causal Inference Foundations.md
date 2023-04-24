@@ -70,10 +70,10 @@ p_{C|E=2}&=\frac{\frac{1}{\sqrt{2\pi}}\exp(-\frac{(2-4c)^2}{2}) \cdot \frac{1}{\
 $$
 
 #### Problem 3.7
-![Elements of Causal Inference Foundations_image_1](../attachments/Elements%20of%20Causal%20Inference%20Foundations_image_1.png)
+![Cause-Effect Models_image_1](../../attachments/Cause-Effect%20Models_image_1.png)
 do(Y=constant)，如果此时 X与Y不独立，那么是前者，否则是后者
 #### Problem 3.8
-![Elements of Causal Inference Foundations_image_2](../attachments/Elements%20of%20Causal%20Inference%20Foundations_image_2.png)
+![Cause-Effect Models_image_2](../../attachments/Cause-Effect%20Models_image_2.png)
 Solution:
 a)
 
