@@ -531,7 +531,7 @@ shape: (43, 1)
 └──────────┘
 ```
 #### Folds
-Fold 用来进行 columns 之间的聚合操作
+Fold 用来进行 columns 之间的聚合操作，即 horizontal reduction
 
 ```python
 # 求每一列的和
@@ -862,6 +862,8 @@ shape: (1, 1)
 └───────┘
 ```
 在`Pandas`中，`NaN`也是缺失值（如果列的类型是`float`的话）
+
+`DataFrame.interpolate`可以进行线性插值
 ## 各种特殊操作的API
 ####  Explode: 把某一列 list 展开
 ```python
@@ -895,4 +897,5 @@ shape: (5, 2)
 │ C      ┆ null │
 └────────┴──────┘
 ```
+
 ## 实际问题
