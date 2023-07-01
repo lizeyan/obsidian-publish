@@ -637,6 +637,197 @@ shape: (3, 1)
 │ c3123 │
 └───────┘
 ```
+#### List and array
+
+```python
+# 通过split等API可以创建lists
+In [121]: weather = pl.DataFrame(
+     ...:     {
+     ...:         "station": ["Station " + str(x) for x in range(1, 6)],
+     ...:         "temperatures": [
+     ...:             "20 5 5 E1 7 13 19 9 6 20",
+     ...:             "18 8 16 11 23 E2 8 E2 E2 E2 90 70 40",
+     ...:             "19 24 E9 16 6 12 10 22",
+     ...:             "E2 E0 15 7 8 10 E1 24 17 13 6",
+     ...:             "14 8 E0 16 22 24 E1",
+     ...:         ],
+     ...:     }
+     ...: )
+     ...: print(weather)
+shape: (5, 2)
+┌───────────┬───────────────────────────────────┐
+│ station   ┆ temperatures                      │
+│ ---       ┆ ---                               │
+│ str       ┆ str                               │
+╞═══════════╪═══════════════════════════════════╡
+│ Station 1 ┆ 20 5 5 E1 7 13 19 9 6 20          │
+│ Station 2 ┆ 18 8 16 11 23 E2 8 E2 E2 E2 90 7… │
+│ Station 3 ┆ 19 24 E9 16 6 12 10 22            │
+│ Station 4 ┆ E2 E0 15 7 8 10 E1 24 17 13 6     │
+│ Station 5 ┆ 14 8 E0 16 22 24 E1               │
+└───────────┴───────────────────────────────────┘
+
+In [122]: weather.with_columns(pl.col("temperatures").str.split(" "))
+Out[122]:
+shape: (5, 2)
+┌───────────┬──────────────────────┐
+│ station   ┆ temperatures         │
+│ ---       ┆ ---                  │
+│ str       ┆ list[str]            │
+╞═══════════╪══════════════════════╡
+│ Station 1 ┆ ["20", "5", … "20"]  │
+│ Station 2 ┆ ["18", "8", … "40"]  │
+│ Station 3 ┆ ["19", "24", … "22"] │
+│ Station 4 ┆ ["E2", "E0", … "6"]  │
+│ Station 5 ┆ ["14", "8", … "E1"]  │
+└───────────┴──────────────────────┘
+```
+
+List 的 element-wise 操作，其中`pl.element()`指代要计算的元素：
+```python
+In [132]: weather.with_columns(pl.col("temperatures").str.split(" ").list.eval(pl.element() + "1"))
+Out[132]:
+shape: (5, 2)
+┌───────────┬─────────────────────────┐
+│ station   ┆ temperatures            │
+│ ---       ┆ ---                     │
+│ str       ┆ list[str]               │
+╞═══════════╪═════════════════════════╡
+│ Station 1 ┆ ["201", "51", … "201"]  │
+│ Station 2 ┆ ["181", "81", … "401"]  │
+│ Station 3 ┆ ["191", "241", … "221"] │
+│ Station 4 ┆ ["E21", "E01", … "61"]  │
+│ Station 5 ┆ ["141", "81", … "E11"]  │
+└───────────┴─────────────────────────┘
+```
+```python
+In [133]: out = weather.with_columns(
+     ...:     pl.col("temperatures")
+     ...:     .str.split(" ")
+     ...:     .list.eval(pl.element().cast(pl.Int64, strict=False).is_null())
+     ...:     .list.sum()
+     ...:     .alias("errors")
+     ...: )
+     ...: print(out)
+shape: (5, 3)
+┌───────────┬───────────────────────────────────┬────────┐
+│ station   ┆ temperatures                      ┆ errors │
+│ ---       ┆ ---                               ┆ ---    │
+│ str       ┆ str                               ┆ u32    │
+╞═══════════╪═══════════════════════════════════╪════════╡
+│ Station 1 ┆ 20 5 5 E1 7 13 19 9 6 20          ┆ 1      │
+│ Station 2 ┆ 18 8 16 11 23 E2 8 E2 E2 E2 90 7… ┆ 4      │
+│ Station 3 ┆ 19 24 E9 16 6 12 10 22            ┆ 1      │
+│ Station 4 ┆ E2 E0 15 7 8 10 E1 24 17 13 6     ┆ 3      │
+│ Station 5 ┆ 14 8 E0 16 22 24 E1               ┆ 2      │
+└───────────┴───────────────────────────────────┴────────┘
+```
+```python
+In [135]: weather_by_day = pl.DataFrame(
+     ...:     {
+     ...:         "station": ["Station " + str(x) for x in range(1, 11)],
+     ...:         "day_1": [17, 11, 8, 22, 9, 21, 20, 8, 8, 17],
+     ...:         "day_2": [15, 11, 10, 8, 7, 14, 18, 21, 15, 13],
+     ...:         "day_3": [16, 15, 24, 24, 8, 23, 19, 23, 16, 10],
+     ...:     }
+     ...: )
+     ...: print(weather_by_day)
+shape: (10, 4)
+┌────────────┬───────┬───────┬───────┐
+│ station    ┆ day_1 ┆ day_2 ┆ day_3 │
+│ ---        ┆ ---   ┆ ---   ┆ ---   │
+│ str        ┆ i64   ┆ i64   ┆ i64   │
+╞════════════╪═══════╪═══════╪═══════╡
+│ Station 1  ┆ 17    ┆ 15    ┆ 16    │
+│ Station 2  ┆ 11    ┆ 11    ┆ 15    │
+│ Station 3  ┆ 8     ┆ 10    ┆ 24    │
+│ Station 4  ┆ 22    ┆ 8     ┆ 24    │
+│ …          ┆ …     ┆ …     ┆ …     │
+│ Station 7  ┆ 20    ┆ 18    ┆ 19    │
+│ Station 8  ┆ 8     ┆ 21    ┆ 23    │
+│ Station 9  ┆ 8     ┆ 15    ┆ 16    │
+│ Station 10 ┆ 17    ┆ 13    ┆ 10    │
+└────────────┴───────┴───────┴───────┘
+
+In [136]: rank_pct = (pl.element().rank(descending=True) / pl.col("*").count()).round(2)
+     ...:
+     ...: out = weather_by_day.with_columns(
+     ...:     # create the list of homogeneous data
+     ...:     pl.concat_list(pl.all().exclude("station")).alias("all_temps")
+     ...: ).select(
+     ...:     # select all columns except the intermediate list
+     ...:     pl.all().exclude("all_temps"),
+     ...:     # compute the rank by calling `list.eval`
+     ...:     pl.col("all_temps").list.eval(rank_pct, parallel=True).alias("temps_rank"),
+     ...: )
+     ...:
+     ...: print(out)
+shape: (10, 5)
+┌────────────┬───────┬───────┬───────┬────────────────────┐
+│ station    ┆ day_1 ┆ day_2 ┆ day_3 ┆ temps_rank         │
+│ ---        ┆ ---   ┆ ---   ┆ ---   ┆ ---                │
+│ str        ┆ i64   ┆ i64   ┆ i64   ┆ list[f64]          │
+╞════════════╪═══════╪═══════╪═══════╪════════════════════╡
+│ Station 1  ┆ 17    ┆ 15    ┆ 16    ┆ [0.33, 1.0, 0.67]  │
+│ Station 2  ┆ 11    ┆ 11    ┆ 15    ┆ [0.83, 0.83, 0.33] │
+│ Station 3  ┆ 8     ┆ 10    ┆ 24    ┆ [1.0, 0.67, 0.33]  │
+│ Station 4  ┆ 22    ┆ 8     ┆ 24    ┆ [0.67, 1.0, 0.33]  │
+│ …          ┆ …     ┆ …     ┆ …     ┆ …                  │
+│ Station 7  ┆ 20    ┆ 18    ┆ 19    ┆ [0.33, 1.0, 0.67]  │
+│ Station 8  ┆ 8     ┆ 21    ┆ 23    ┆ [1.0, 0.67, 0.33]  │
+│ Station 9  ┆ 8     ┆ 15    ┆ 16    ┆ [1.0, 0.67, 0.33]  │
+│ Station 10 ┆ 17    ┆ 13    ┆ 10    ┆ [0.33, 0.67, 1.0]  │
+└────────────┴───────┴───────┴───────┴────────────────────┘
+```
+#### Map and APPLy
+Map 作用于列，但是在 groupby context 中，map 会先作用于列，再进行aggregation。所以永远不要在 groupby context 中使用 map。
+```python
+In [137]: df = pl.DataFrame(
+     ...:     {
+     ...:         "keys": ["a", "a", "b"],
+     ...:         "values": [10, 7, 1],
+     ...:     }
+     ...: )
+     ...:
+     ...: out = df.groupby("keys", maintain_order=True).agg(
+     ...:     [
+     ...:         pl.col("values").map(lambda s: s.shift()).alias("shift_map"),
+     ...:         pl.col("values").shift().alias("shift_expression"),
+     ...:     ]
+     ...: )
+     ...: print(df)
+shape: (3, 2)
+┌──────┬────────┐
+│ keys ┆ values │
+│ ---  ┆ ---    │
+│ str  ┆ i64    │
+╞══════╪════════╡
+│ a    ┆ 10     │
+│ a    ┆ 7      │
+│ b    ┆ 1      │
+└──────┴────────┘
+```
+Apple 在 selection context 中作用于 element，在 groupby context 中作用于 group。
+```python
+In [138]: out = df.groupby("keys", maintain_order=True).agg(
+     ...:     [
+     ...:         pl.col("values").apply(lambda s: s.shift()).alias("shift_map"),
+     ...:         pl.col("values").shift().alias("shift_expression"),
+     ...:     ]
+     ...: )
+     ...: print(out)
+shape: (2, 3)
+┌──────┬────────────┬──────────────────┐
+│ keys ┆ shift_map  ┆ shift_expression │
+│ ---  ┆ ---        ┆ ---              │
+│ str  ┆ list[i64]  ┆ list[i64]        │
+╞══════╪════════════╪══════════════════╡
+│ a    ┆ [null, 10] ┆ [null, 10]       │
+│ b    ┆ [null]     ┆ [null]           │
+└──────┴────────────┴──────────────────┘
+```
+## Transformation
+和`Pandas`中类似，包括`concat`， `melt`, `pivot`, `join`
 ## Polars中没有 Index 的概念
 [Understand Polars’ Lack of Indexes | by Carl M. Kadie | Towards Data Science](https://towardsdatascience.com/understand-polars-lack-of-indexes-526ea75e413)
 ## 缺失值
