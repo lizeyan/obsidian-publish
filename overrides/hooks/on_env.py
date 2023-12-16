@@ -14,8 +14,10 @@ def obsidian_graph():
     """Generates a graph of the Obsidian vault."""
     # pylint: disable=import-outside-toplevel
     import obsidiantools.api as otools
+
     # pylint: disable=import-outside-toplevel``
     from pyvis.network import Network
+
     log = logging.getLogger("mkdocs.plugins." + __name__)
     log.info("[OBSIDIAN GRAPH] Generating graph...")
     vault_path = Path(Path.cwd(), "docs")
@@ -33,6 +35,7 @@ def obsidian_graph():
     log.info("[OBSIDIAN GRAPH] Graph generated!")
     return ""
 
+
 def get_last_part_URL(url):
     """Get the last part of an URL.
 
@@ -46,6 +49,7 @@ def get_last_part_URL(url):
         url = url + "/"
     head, tail = os.path.split(url)
     return "/" + tail if tail != "" else ""
+
 
 def regex_replace(s, find, replace):
     """A non-optimal implementation of a regex filter"""
