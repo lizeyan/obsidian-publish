@@ -56,19 +56,45 @@ Out[5]: ListType[int64]([, ...])
 In [6]: nb.typed.Dict.empty(nb.int64, nb.float64)
 Out[6]: DictType[int64,float64]<iv=None>({})
 ```
-## Numpy函数
-因为 Numba的目标主要是加速计算密集型代码，因此特别支持了科学计算的事实标准，Numpy。支持的 Numpy AP I接口可以参考[官方文档](https://numba.pydata.org/numba-doc/dev/reference/numpysupported.html#)。
+## Numpy
+因为 Numba的目标主要是加速计算密集型代码，因此特别支持了科学计算的事实标准，Numpy。`ndarray`也是numba原生支持的数据类型，可以直接在 JIT函数和Python中传递。支持的 Numpy AP I接口可以参考[官方文档](https://numba.pydata.org/numba-doc/dev/reference/numpysupported.html#)。
 但是值得注意的是，几乎所有 Numpy API，在 Numba中都只支持一部分参数 ，一般都不支持 `axis`参数。因此，如果需要在特定维度或者多个维度计算，一般都需要自己写循环。
 例如，如下的代码，Numba是不支持的：
 ```python
 np.ones((10, 10)).sum(axis=-1)
 ```
 ## 如何指定各种 Python 类型对应的 Numba类型
+TODO
 ### 字符串
 # 什么样的代码不适合使用JIT加速
 ## JIT函数调用的开销很大
+Numba 调用 JIT 函数的方式是有一个 dispatcher，当调用 python 函数时，dispatcher就根据参数的类型，选择对应的原生函数执行。这一步的开销很大，因此将大量的低开销的函数 JIT 编译是不利于性能的。
+例如在如下例子中，njit函数的耗时反而更大了
+```python
+In [1]:def f(a: int) -> int:
+		    return a * 2;
+
+In [2]: njit_f = njit(f); f(2)
+
+In [3]: %timeit -n10 -r10 njit_f(2)
+290 ns ± 175 ns per loop (mean ± std. dev. of 10 runs, 10 loops each)
+
+In [4]: %timeit -n10 -r10 f(2)
+101 ns ± 55.4 ns per loop (mean ± std. dev. of 10 runs, 10 loops each)	
+
+```
 ## 转换数据格式的开销很大
-## 避免使用 list 或者 dict 和 JIT函数交互
+JIT函数可以直接使用的数据类型只有基本类型、`ndarray`，str 和 基本类型的tuple，应该尽可能把 JIT 函数的输入输出设计为这些类型。
+使用 list 或者 dict 和 JIT函数交互有很多问题。首先，list支持list reflection，但是性能较差而且限制颇多。dict完全不支持 reflection。要想将原生的list和dict转换为TypedList和TypedDict，只能在 Python 中调用 `TypedList.empty_list`或者`TypedDict.empty`创建空容器，然后往其中一个一个通过循环添加元素，效率是很低的。
+如果想干脆就在Python中也一直用`TypedList`和`TypedDict`，避开转换开销，那么就需要注意它们和Python容器的不同点。一个经常遇到的问题是，`TypedList`和`TypedDict`不支持通过pickle序列化。
 # 使用 Portable Cache，减少编译耗时
+如果想要在容器中使用 JIT，那么需要注意 JIT 启动时编译需要消耗较多的CPU和时间，这会导致容器冷启动的开销增加。Numba 支持 cache，但是需要注意几个点
+- 代码中写上 `@jit(cache=True)`
+- 环境变量 NUMBA_DISABLE_JIT 没有设置
+- cpu model 和 cpu features。Numba会记住编译时使用的 CPU model和支持的 CPU features。在容器中这种情况尤为重要，因为很可能跑在不同的 cpu 上。可以通过设置 `NUMBA_CPU_NAME=generic`使得缓存兼容各种类型的 CPU model。
+
 # Takeaways：如何面向 JIT 设计你的代码
+- 输入输出避免使用 ndarray、int、float，bool、string和以上类型的tuple之外的类型
+- 避免大量调用 JIT 函数（包括在 JIT函数内部调用）
+- 
 
