@@ -18,3 +18,4 @@ cairosvg==2.6.0
 pillow==9.4.0
 mkdocs-glightbox==0.3.1
 mkdocs-minify-plugin==0.6.2
+numpy==1.26.0
